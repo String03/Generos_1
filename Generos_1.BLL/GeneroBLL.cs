@@ -26,5 +26,10 @@ namespace Generos_1.BLL
         {
             generoRepository.Alta(genero); 
         }
+
+        public void Baja(Genero genero)
+        {
+            generoRepository.Baja(genero);
+        }
     }
 }

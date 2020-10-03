@@ -44,7 +44,9 @@ namespace Generos_1.DAO
         {
             Abrir();
             string query = "Delete from Genero Where id = @id";
-
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = genero.Id;
+            sqlCommand.ExecuteNonQuery();
             Cerrar();
         }
 

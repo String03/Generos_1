@@ -49,5 +49,19 @@ namespace Generos_1
         {
             txt_nombre_genero.Text = string.Empty;
         }
+
+        private Genero SeleccionarGenero()
+        {
+            Genero genero = grillaGenero.SelectedRows[0].DataBoundItem as Genero;
+            return genero;
+        }
+
+        private void btn_baja_genero_Click(object sender, EventArgs e)
+        {
+            var genero = SeleccionarGenero();
+            generoBLL.Baja(genero);
+            RefrescarGrillaGeneros();
+            LimpiarCampos();
+        }
     }
 }
