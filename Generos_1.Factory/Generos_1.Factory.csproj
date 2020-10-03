@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB5D3EB7-886D-4C9C-B0DF-7919391B781B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Generos_1</RootNamespace>
-    <AssemblyName>Generos_1</AssemblyName>
+    <ProjectGuid>{95EE4EC6-4928-4D7D-9154-53FFC5D3F6BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Generos_1.Factory</RootNamespace>
+    <AssemblyName>Generos_1.Factory</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,58 +37,25 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="GeneroFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Generos_1.BLL\Generos_1.BLL.csproj">
       <Project>{DE83473B-0C3A-439C-A338-55D2022799E1}</Project>
       <Name>Generos_1.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Generos_1.EE\Generos_1.EE.csproj">
-      <Project>{296410BD-AA5C-4547-8DA9-41CBE9213D4C}</Project>
-      <Name>Generos_1.EE</Name>
+    <ProjectReference Include="..\Generos_1.DAO\Generos_1.DAO.csproj">
+      <Project>{9F4C4FAF-E3CA-4096-8609-14417BE450F5}</Project>
+      <Name>Generos_1.DAO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Generos_1.Factory\Generos_1.Factory.csproj">
-      <Project>{95EE4EC6-4928-4D7D-9154-53FFC5D3F6BE}</Project>
-      <Name>Generos_1.Factory</Name>
+    <ProjectReference Include="..\Generos_1.Interfaces\Generos_1.Interfaces.csproj">
+      <Project>{20630E1C-AC44-4AA5-BEA4-1C48B92381E1}</Project>
+      <Name>Generos_1.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
