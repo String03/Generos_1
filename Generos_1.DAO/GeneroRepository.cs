@@ -13,7 +13,7 @@ namespace Generos_1.DAO
 {
     public class GeneroRepository : IGeneroRepository
     {
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["PringlesDB"].ConnectionString;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["GeneroDB"].ConnectionString;
 
         private SqlConnection sqlConnection;
 
