@@ -1,0 +1,16 @@
+USE MASTER 
+GO
+
+CREATE DATABASE GeneroDB
+GO
+
+USE GeneroDB
+GO
+
+
+CREATE TABLE Genero(
+	id int PRIMARY KEY IDENTITY(1,1),
+	nombre varchar (120),
+	fecha_reg DATETIME DEFAULT GETDATE(),
+)
+GO
