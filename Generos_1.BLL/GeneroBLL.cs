@@ -21,5 +21,10 @@ namespace Generos_1.BLL
         {
             return generoRepository.ListarGenero();
         }
+
+        public void Alta(Genero genero)
+        {
+            generoRepository.Alta(genero); 
+        }
     }
 }

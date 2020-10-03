@@ -45,6 +45,7 @@
             this.btn_alta_genero.TabIndex = 0;
             this.btn_alta_genero.Text = "Alta";
             this.btn_alta_genero.UseVisualStyleBackColor = true;
+            this.btn_alta_genero.Click += new System.EventHandler(this.btn_alta_genero_Click);
             // 
             // grillaGenero
             // 

@@ -1,4 +1,5 @@
 ﻿using Generos_1.BLL;
+using Generos_1.EE;
 using Generos_1.Factory;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,27 @@ namespace Generos_1
         {
             grillaGenero.DataSource = null;
             grillaGenero.DataSource = generoBLL.ListarGeneros();
+        }
+
+        private Genero LeerGenero()
+        {
+            return new Genero
+            {
+                Nombre = txt_nombre_genero.Text.Trim()
+            };
+        }
+
+        private void btn_alta_genero_Click(object sender, EventArgs e)
+        {
+            var genero = LeerGenero();
+            generoBLL.Alta(genero);
+            RefrescarGrillaGeneros();
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txt_nombre_genero.Text = string.Empty;
         }
     }
 }

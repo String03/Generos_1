@@ -31,12 +31,21 @@ namespace Generos_1.DAO
 
         public void Alta(Genero genero)
         {
-            throw new NotImplementedException();
+            Abrir();
+            string query = "Insert into Genero (nombre,fecha_reg) values (@nombre,@fecha_reg)";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@nombre",SqlDbType.VarChar).Value = genero.Nombre;
+            sqlCommand.Parameters.Add("@fecha_reg", SqlDbType.DateTime).Value = DateTime.Now;
+            sqlCommand.ExecuteNonQuery();
+            Cerrar();
         }
 
         public void Baja(Genero genero)
         {
-            throw new NotImplementedException();
+            Abrir();
+            string query = "Delete from Genero Where id = @id";
+
+            Cerrar();
         }
 
         public IEnumerable<Genero> ListarGenero()
