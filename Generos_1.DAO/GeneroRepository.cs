@@ -50,6 +50,8 @@ namespace Generos_1.DAO
             Cerrar();
         }
 
+        
+
         public IEnumerable<Genero> ListarGenero()
         {
             Abrir();
@@ -81,7 +83,14 @@ namespace Generos_1.DAO
 
         public void Modificacion(Genero genero)
         {
-            throw new NotImplementedException();
+            Abrir();
+            string query = "Update Genero Set nombre = @nombre, fecha_reg = @fecha_reg where id = @id";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = genero.Id;
+            sqlCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = genero.Nombre;
+            sqlCommand.Parameters.Add("@fecha_reg", SqlDbType.DateTime).Value = genero.Fecha_reg;
+            sqlCommand.ExecuteNonQuery();
+            Cerrar();
         }
     }
 }

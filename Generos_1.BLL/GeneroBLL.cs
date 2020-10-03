@@ -31,5 +31,10 @@ namespace Generos_1.BLL
         {
             generoRepository.Baja(genero);
         }
+
+        public void Modificacion(Genero genero)
+        {
+            generoRepository.Modificacion(genero);
+        }
     }
 }

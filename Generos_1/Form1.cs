@@ -63,5 +63,14 @@ namespace Generos_1
             RefrescarGrillaGeneros();
             LimpiarCampos();
         }
+
+        private void btn_modificacion_genero_Click(object sender, EventArgs e)
+        {
+            var genero = SeleccionarGenero();
+            genero.Nombre = txt_nombre_genero.Text.Trim();
+            generoBLL.Modificacion(genero);
+            RefrescarGrillaGeneros();
+            LimpiarCampos();
+        }
     }
 }
